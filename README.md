@@ -6,6 +6,8 @@
 
 > A dispossessed heir, a beggar-prince, a keeper of Moxes, and a survivor who reaches power through discipline rather than entitlement. That is the emotional center of the **Shadow Mage**.
 
+> Learn OpenClaw from **Jared Carthalion, the Shadow Mage** — keeper of Moxes, thief of the Black Lotus, survivor of ruin, and defeater of the tyrant who tried to write his fate for him. I will not ask you to worship the machine. I will teach you how it works, one spell at a time, until you can walk the planes of OpenClaw under your own power.
+
 Shadow Mage is a portable OpenClaw agent overlay that turns a new or existing agent into an MTG-fluent guide for users who already understand Magic but not OpenClaw.
 
 It does three things at once:
@@ -123,3 +125,5 @@ This is an unofficial fan project.
 Part tutorial. Part spellbook. Part novelty engine.
 
 OpenClaw, taught through the color pie.
+
+**You do not need to understand everything at once.** You need a guide, a deck in your hands, and the next correct play. Shadow Mage is built to be that guide.
