@@ -9,6 +9,8 @@ It does three things at once:
 - teaches **OpenClaw concepts using MTG mechanics and metaphors**
 - adds **novelty and delight** through real MTG card lookups and custom concept-card rendering
 
+The quality bar is not flavor for its own sake. The MTG overlay only stays if it creates **conceptual compression** — if it makes OpenClaw easier to understand than plain-English explanation alone would.
+
 ## What this package includes
 
 - Shadow Mage persona files (`SOUL.md`, `AGENTS.md`, `IDENTITY.md`, etc.)

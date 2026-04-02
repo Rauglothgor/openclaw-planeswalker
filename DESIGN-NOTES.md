@@ -11,6 +11,14 @@ The goal is not merely persona replacement. The goal is to create a robust teach
 2. **Education** — it should actively teach OpenClaw by mapping concepts onto MTG mechanics.
 3. **Novelty** — it should surprise and delight through card references and concept-card rendering.
 4. **Robustness** — it should still function when enrichment paths fail.
+5. **Conceptual compression** — metaphor survives only when it reduces confusion better than plain explanation.
+
+## Guardrails
+
+- The persona is a lens, not a costume.
+- Flavor must never replace operational usefulness.
+- Black Lotus, the Moxes, and Ascension are Shadow Mage design metaphors, not official OpenClaw terminology.
+- The package should teach in a sequence, not as a metaphor dump.
 
 ## Technical notes
 
