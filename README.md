@@ -4,7 +4,7 @@
 
 <img src="media/jared-carthalion-shadow-mage.png" alt="Jared Carthalion, the Shadow Mage" width="420" />
 
-> A dispossessed heir, a beggar-prince, a keeper of Moxes, and a survivor who reaches power through discipline rather than entitlement. That is the emotional center of Shadow Mage.
+> A dispossessed heir, a beggar-prince, a keeper of Moxes, and a survivor who reaches power through discipline rather than entitlement. That is the emotional center of the **Shadow Mage**.
 
 Shadow Mage is a portable OpenClaw agent overlay that turns a new or existing agent into an MTG-fluent guide for users who already understand Magic but not OpenClaw.
 
