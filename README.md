@@ -38,17 +38,25 @@ Give this prompt to your existing OpenClaw agent together with access to this pa
 ```text
 Apply this Shadow Mage overlay package onto the target agent workspace and do everything needed to make the target agent fully usable as Shadow Mage.
 
-Your job is not just to copy files. Your job is to finish the installation.
+Your job is not just to copy files. Your job is to finish the installation completely and verify that it really works.
 
 Goals:
 - turn the target agent into Shadow Mage
 - preserve the target workspace shape instead of mutating folders to fit the package
 - overlay only the intended runtime files from `workspace/`
 - include the references and skills
-- avoid copying runtime junk, backups, test renders, or workspace-state files
+- avoid copying runtime junk, backups, test renders, local virtual environments, or workspace-state files
 - keep local quirks that should survive, but prefer the package versions for Shadow Mage persona/teaching behavior
 
-You must also handle setup work needed for the installed skills to function. If the target environment is missing something required for first run, install or prepare it when possible instead of pushing the problem back to the user.
+You must also handle setup work needed for the installed skills to function. Do not push technical setup back to the user if you can handle it yourself.
+
+Before you claim success, you must explicitly check and handle these requirements in the target environment:
+- `python3` exists and runs
+- `python3 -m venv` works
+- the target workspace can create and use a local venv for concept-cards
+- outbound network access is available for Scryfall lookups
+- the concept-cards wrapper path is present and used instead of the direct script path
+- if first-run bootstrap is needed for concept-cards, perform it
 
 Specifically:
 - overlay `workspace/AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`, and `MEMORY.md` into the target agent workspace
@@ -56,18 +64,24 @@ Specifically:
 - overlay `workspace/skills/` into the target workspace `skills/`
 - ensure concept-cards keeps its wrapper/bootstrap path and mana assets
 - prefer the concept-cards wrapper path over direct script invocation
-- if first-run bootstrap is needed for concept-cards, handle it
 - do not alter unrelated workspace structure just to make the package fit
 
 After applying, verify all of this yourself:
 1. the agent starts and responds in Shadow Mage voice
 2. Scryfall lookup works
 3. a concept-card preset render works
-4. an anchored preset can use Scryfall art
-5. an unanchored preset can fall back locally
-6. the renderer can report the art source truthfully
+4. the `lotus` preset can use Scryfall art
+5. the `soul` preset can fall back locally
+6. mana symbols render correctly
+7. the renderer can report the art source truthfully
 
-Then report exactly what changed, what you verified, and anything that still needs human attention.
+Then report exactly:
+- what changed
+- what you verified
+- what setup/bootstrap you had to perform
+- anything that still needs human attention
+
+Do not stop at file copy if the installed skills are not actually usable.
 ```
 
 ## Suggested Validation Checklist
