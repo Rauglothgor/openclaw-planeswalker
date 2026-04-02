@@ -2,7 +2,7 @@
 
 **Teach OpenClaw through Magic: The Gathering.**
 
-![Jared Carthalion, the Shadow Mage](media/jared-carthalion-shadow-mage.png)
+<img src="media/jared-carthalion-shadow-mage.png" alt="Jared Carthalion, the Shadow Mage" width="420" />
 
 > A dispossessed heir, a beggar-prince, a keeper of Moxes, and a survivor who reaches power through discipline rather than entitlement. That is the emotional center of Shadow Mage.
 
@@ -17,162 +17,70 @@ The quality bar is not flavor for its own sake. The MTG overlay only stays if it
 
 ## Who this is for
 
-This repo is for someone who already understands **Magic: The Gathering** much better than they understand **OpenClaw**.
+This repo is for someone who already has an OpenClaw agent and wants to transform that agent into **Shadow Mage** — a guide who teaches OpenClaw through Magic: The Gathering.
 
-It assumes you may be new to:
-- OpenClaw agent workspaces
-- skill folders
-- persistent instruction files
-- Python helper scripts
-- the difference between a persona prompt and a real installed capability
+You do not need to manually figure out the internals of the package first. If you can get to your OpenClaw agent, that is enough.
 
-This package is meant to give you a Shadow Mage agent **without requiring you to invent the system yourself**.
+## The simple install path
 
-## What this package includes
+This package is meant to be installed the easy way:
 
-- Shadow Mage persona files (`SOUL.md`, `AGENTS.md`, `IDENTITY.md`, etc.)
-- MTG ↔ OpenClaw teaching references
-- **Scryfall skill** for real card lookups and images
-- **Concept card renderer** for custom MTG-style OpenClaw teaching cards
-- built-in **mana symbol assets**
-- wrapper-based local dependency bootstrap for concept-card rendering
-- Scryfall-art support for anchored presets and deterministic local fallback for non-anchored cards
+1. download or unpack this repo/package somewhere your OpenClaw agent can access
+2. give your existing agent the install prompt below
+3. let the agent apply the package, handle setup, and verify the result
 
-## Intended result
-
-Overlay this onto a new or existing OpenClaw agent workspace and that agent becomes a proactive educational guide that explains OpenClaw like a planeswalker explaining the stack to a new mage.
-
-## Package layout
-
-This repo is intentionally shaped as an overlay package:
-
-- `workspace/...` → overlay onto the target agent workspace root
-- `workspace/references/...` → target workspace `references/`
-- `workspace/skills/...` → target workspace `skills/`
-
-## Before You Install
-
-You do **not** need to be an expert, but you do need a few basics available in the target environment:
-
-- an existing OpenClaw agent workspace to apply the overlay to
-- `python3` available on the host
-- Python venv support available (`python3 -m venv`)
-- outbound network access for Scryfall lookups
-- permission for the target agent to read/write its workspace files
-
-### Important first-run note
-
-The concept-card renderer uses a wrapper script:
-
-- `skills/concept-cards/bin/render_card`
-
-On first use, that wrapper may create a **local virtual environment** and install **Pillow** automatically. That means the **first concept-card render may take longer than later renders**. This is expected.
-
-Do **not** assume the feature is broken just because the first render is slower.
-
-Do **not** use the direct script path for normal use if the wrapper exists. Prefer:
-
-- `skills/concept-cards/bin/render_card`
-
-over:
-
-- `skills/concept-cards/scripts/render_card.py`
+The prompt is the install method. The package is the source material.
 
 ## Installation Prompt
 
-Use this with an existing OpenClaw agent that has access to the unpacked package files:
+Give this prompt to your existing OpenClaw agent together with access to this package:
 
 ```text
-Apply this Shadow Mage overlay package onto the target agent workspace.
+Apply this Shadow Mage overlay package onto the target agent workspace and do everything needed to make the target agent fully usable as Shadow Mage.
+
+Your job is not just to copy files. Your job is to finish the installation.
 
 Goals:
-- make the target agent behave as Shadow Mage
+- turn the target agent into Shadow Mage
 - preserve the target workspace shape instead of mutating folders to fit the package
 - overlay only the intended runtime files from `workspace/`
 - include the references and skills
-- do not copy runtime junk, backups, venvs, test renders, or workspace-state files
+- avoid copying runtime junk, backups, test renders, or workspace-state files
 - keep local quirks that should survive, but prefer the package versions for Shadow Mage persona/teaching behavior
+
+You must also handle setup work needed for the installed skills to function. If the target environment is missing something required for first run, install or prepare it when possible instead of pushing the problem back to the user.
 
 Specifically:
 - overlay `workspace/AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`, and `MEMORY.md` into the target agent workspace
 - overlay `workspace/references/` into the target workspace `references/`
 - overlay `workspace/skills/` into the target workspace `skills/`
 - ensure concept-cards keeps its wrapper/bootstrap path and mana assets
+- prefer the concept-cards wrapper path over direct script invocation
+- if first-run bootstrap is needed for concept-cards, handle it
 - do not alter unrelated workspace structure just to make the package fit
 
-After applying:
-1. verify the agent starts and responds in Shadow Mage voice
-2. verify Scryfall lookup works
-3. verify a concept-card preset render works
-4. verify an anchored preset can use Scryfall art and an unanchored preset can fall back locally
-5. report exactly what was changed and any mismatches or skipped files
-```
+After applying, verify all of this yourself:
+1. the agent starts and responds in Shadow Mage voice
+2. Scryfall lookup works
+3. a concept-card preset render works
+4. an anchored preset can use Scryfall art
+5. an unanchored preset can fall back locally
+6. the renderer can report the art source truthfully
 
-This package is best applied intentionally by an agent, not blindly copied by a generic installer.
+Then report exactly what changed, what you verified, and anything that still needs human attention.
+```
 
 ## Suggested Validation Checklist
 
-If you are new to this, do these checks in order after installation:
+If you want to sanity-check the result afterward, do these in order:
 
-### 1. Basic persona check
-Start a fresh session with the target agent and ask who it is.
+1. Ask the agent who it is
+2. Ask it to fetch **Black Lotus** and show the image
+3. Ask it to render the `soul` preset
+4. Ask it to render the `lotus` preset
+5. Ask which art source each card used
 
-You are looking for:
-- Shadow Mage voice
-- MTG-fluent teaching tone
-- practical help, not just theatrical roleplay
-
-### 2. Real card lookup check
-Ask the agent to fetch **Black Lotus** and show the image.
-
-You are looking for:
-- successful Scryfall lookup
-- an actual MTG card image
-
-### 3. Concept-card renderer check
-Ask the agent to render a preset concept card.
-
-Start with:
-- `soul`
-
-You are looking for:
-- an image is actually produced
-- mana symbols render correctly
-- the card looks like a real teaching card rather than broken placeholder output
-
-### 4. Anchored art check
-Ask the agent to render:
-- `lotus`
-
-You are looking for:
-- the card art box uses real Scryfall anchor art
-- the agent can truthfully report that the art source was Scryfall
-
-### 5. Fallback check
-Ask the agent to render:
-- `soul`
-
-You are looking for:
-- the art box falls back to the local template style when no MTG anchor art is configured
-- the agent can truthfully report that the art source was the template fallback
-
-## If Something Goes Wrong
-
-### If Scryfall lookup fails
-Check:
-- the host has outbound internet access
-- `python3` works
-- the agent can access the installed `skills/scryfall-mtg/` files
-
-### If concept-card rendering fails on first run
-Check:
-- `python3` exists
-- `python3 -m venv` works on that host
-- the agent is using the wrapper path, not the direct script path
-- the first run may simply need extra time for Pillow bootstrap
-
-### If the persona feels shallow
-Check whether the overlay files actually replaced the target agent's persona/instruction files. A prompt can imitate Shadow Mage temporarily, but the package is supposed to install the **behavior stack**, not just style.
+If those work, the Shadow Mage install is in good shape.
 
 ## Notes
 
