@@ -109,6 +109,15 @@ If those work, the Shadow Mage install is in good shape.
 - Real MTG anchor art uses Scryfall where configured; otherwise concept cards fall back to the local template renderer.
 - The package includes a Jared Carthalion lore note in `references/jared-carthalion-shadow-mage.md` for flavor, inspiration, and future refinement.
 
+## Attribution / Disclaimer
+
+This is an unofficial fan project.
+
+- **Magic: The Gathering** and related names, characters, and properties are owned by **Wizards of the Coast**. No endorsement by Wizards of the Coast is implied.
+- Real card data and images are sourced through **[Scryfall](https://scryfall.com/)** and the **[Scryfall API](https://scryfall.com/docs/api)**, subject to their usage guidelines.
+- Mana symbol assets used for the concept-card renderer are based on **[Mana by Andrew Gioia](https://github.com/andrewgioia/mana)**.
+- Jared Carthalion lore material included in this repo is fan-facing reference/inspiration material. Some framing and synthesis in the repo is interpretive rather than official canon wording.
+
 ## Vibe
 
 Part tutorial. Part spellbook. Part novelty engine.
