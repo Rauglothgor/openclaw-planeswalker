@@ -2,15 +2,18 @@
 
 If you already have an OpenClaw agent, this should be simple.
 
-## Install in the easiest way
+## The intended install path
 
-1. Put this package somewhere your existing OpenClaw agent can access
-2. Open the README
-3. Copy the **Installation Prompt**
-4. Give that prompt to your existing agent
-5. Let the agent apply the package and verify it
+1. Download **`shadow-mage-overlay-package.zip`** from this repo
+2. Send that zip file to your existing OpenClaw agent
+3. Open the README
+4. Copy the **Installation Prompt**
+5. Paste that prompt to your agent
+6. Let the agent do the installation and verification
 
-That is the intended install path.
+You do **not** need to clone the whole repo just to install Shadow Mage.
+The repo is the home of the package.
+The **zip + prompt** is the user install path.
 
 ## After install, test these five things
 

@@ -25,15 +25,20 @@ You do not need to manually figure out the internals of the package first. If yo
 
 This package is meant to be installed the easy way:
 
-1. download or unpack this repo/package somewhere your OpenClaw agent can access
-2. give your existing agent the install prompt below
-3. let the agent apply the package, handle setup, and verify the result
+1. download **`shadow-mage-overlay-package.zip`** from this repo
+2. give that zip file to your existing OpenClaw agent
+3. copy the install prompt below
+4. paste the prompt to your agent
+5. let the agent apply the package, handle setup, and verify the result
 
-The prompt is the install method. The package is the source material.
+That is the intended experience.
+
+The repo is for distribution and inspection.
+The **zip + prompt** is the install path.
 
 ## Installation Prompt
 
-Give this prompt to your existing OpenClaw agent together with access to this package:
+Give this prompt to your existing OpenClaw agent together with the downloaded package zip:
 
 ```text
 Apply this Shadow Mage overlay package onto the target agent workspace and do everything needed to make the target agent fully usable as Shadow Mage.
