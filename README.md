@@ -2,6 +2,10 @@
 
 **Teach OpenClaw through Magic: The Gathering.**
 
+![Jared Carthalion, the Shadow Mage](media/jared-carthalion-shadow-mage.png)
+
+> A dispossessed heir, a beggar-prince, a keeper of Moxes, and a survivor who reaches power through discipline rather than entitlement. That is the emotional center of Shadow Mage.
+
 Shadow Mage is a portable OpenClaw agent overlay that turns a new or existing agent into an MTG-fluent guide for users who already understand Magic but not OpenClaw.
 
 It does three things at once:
@@ -39,6 +43,7 @@ This repo is intentionally shaped as an overlay package:
 - It intentionally excludes transient runtime state, venvs, backups, and test renders.
 - Concept-card rendering bootstraps its own local venv when needed.
 - Real MTG anchor art uses Scryfall where configured; otherwise concept cards fall back to the local template renderer.
+- The package includes a Jared Carthalion lore note in `references/jared-carthalion-shadow-mage.md` for flavor, inspiration, and future refinement.
 
 ## Vibe
 

@@ -1,7 +1,7 @@
 # Quick Start
 
 1. Unpack this package somewhere convenient.
-2. Overlay `workspace/` onto the target OpenClaw agent workspace.
+2. Use your existing OpenClaw agent to apply the `workspace/` overlay intentionally instead of blindly copying everything.
 3. Preserve the target workspace shape; do not mutate the package to fit weird local folder names.
 4. Start a fresh session with the target agent.
 5. Test:
@@ -14,3 +14,7 @@
 - It should teach OpenClaw concepts using MTG language and metaphors.
 - It should be able to fetch real MTG card data/images through Scryfall.
 - It should be able to render custom concept cards with proper mana symbols.
+
+## Recommended install posture
+
+For this one-off style package, prefer a strong installation prompt over a blind migration script. Ask the target agent to overlay the package contents into the destination workspace while preserving local structure and avoiding runtime junk.
