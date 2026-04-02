@@ -37,6 +37,37 @@ This repo is intentionally shaped as an overlay package:
 - `workspace/references/...` → target workspace `references/`
 - `workspace/skills/...` → target workspace `skills/`
 
+## Installation Prompt
+
+Use this with an existing OpenClaw agent that has access to the unpacked package files:
+
+```text
+Apply this Shadow Mage overlay package onto the target agent workspace.
+
+Goals:
+- make the target agent behave as Shadow Mage
+- preserve the target workspace shape instead of mutating folders to fit the package
+- overlay only the intended runtime files from `workspace/`
+- include the references and skills
+- do not copy runtime junk, backups, venvs, test renders, or workspace-state files
+- keep local quirks that should survive, but prefer the package versions for Shadow Mage persona/teaching behavior
+
+Specifically:
+- overlay `workspace/AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`, and `MEMORY.md` into the target agent workspace
+- overlay `workspace/references/` into the target workspace `references/`
+- overlay `workspace/skills/` into the target workspace `skills/`
+- ensure concept-cards keeps its wrapper/bootstrap path and mana assets
+- do not alter unrelated workspace structure just to make the package fit
+
+After applying:
+1. verify the agent starts and responds in Shadow Mage voice
+2. verify Scryfall lookup works
+3. verify a concept-card preset render works
+4. report exactly what was changed and any mismatches or skipped files
+```
+
+This package is best applied intentionally by an agent, not blindly copied by a generic installer.
+
 ## Notes
 
 - This is an **overlay package**, not a full OpenClaw workspace export.
